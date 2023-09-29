@@ -1,0 +1,22 @@
+{
+  "name": "AD717x-AD411x-Arduino",
+  "version": "1.0.0",
+  "license" : "",
+  "keywords": "",
+  "description": "",
+  "authors":
+  [
+    {
+      "name": "Hidaka Sato",
+      "maintainer": true
+    }
+  ],
+  "build":{
+    "srcFilter":
+      [
+        "+<*>"
+      ]
+  },
+  "frameworks": "*",
+  "platforms": "*"
+}
