@@ -374,14 +374,14 @@ uint8_t AD717X_ComputeCRC8(uint8_t * pBuf,
 uint8_t AD717X_ComputeXOR8(uint8_t * pBuf,
 			   uint8_t bufSize)
 {
-	uint8_t xor = 0;
+	uint8_t xor_ = 0;
 
 	while(bufSize) {
-		xor ^= *pBuf;
+		xor_ ^= *pBuf;
 		pBuf++;
 		bufSize--;
 	}
-	return xor;
+	return AD717X_COMM_REG_WEN;
 }
 
 /***************************************************************************//**
