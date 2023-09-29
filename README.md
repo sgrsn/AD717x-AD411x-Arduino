@@ -1,6 +1,6 @@
 # AD717x-AD411x-Arduino
 
-It supports the following boards.
+This library supports the following boards:
 
 - AD411x series
   - AD4111
@@ -17,23 +17,23 @@ It supports the following boards.
   - AD7177
 
 
-# Run examples
+# Run Examples
 
-Currently there is an example with teensy4.1 in the project.
+Currently, there's an example for the teensy4.1 in the project.
 
-Running the following will write a program to teensy4.1 to configure the AD7177 and read data.
+To write a program to the teensy4.1, configure the AD7177, and read data, execute the following command:
 
 ```
 pio run -e AD7177-example -t upload
 ```
 
-Implementation of examples for other boards is undecided. 
+Implementation of examples for other boards is not currently planned.
 
-If you create a example, please send a Pull request.
+If you've created an example, kindly send a Pull Request.
 
 # Import
 
-To use this project as a library, add the following line to the platformio.ini file of your project.
+To use this project as a library, append the following line to the `platformio.ini` file in your project:
 
 ```
 lib_deps = 
