@@ -9,8 +9,8 @@
 #include "ad717x.h"
 
 void setup() {
-	/* initiate serial communication */
-	Serial.begin(9600);
+  /* initiate serial communication */
+  Serial.begin(9600);
   Serial.println("start");
 
   std::stringstream ss;
@@ -66,7 +66,7 @@ void setup() {
   init_param.regs = reg;
   init_param.num_regs = 30;
 
-	AD717X_Init(&pdevice, init_param);
+  AD717X_Init(&pdevice, init_param);
 
   // Show message //
   AD717X_ReadRegister(pdevice, AD717X_ID_REG);
