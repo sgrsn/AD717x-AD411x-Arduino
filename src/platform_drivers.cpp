@@ -1,4 +1,4 @@
-#include "arduino_spi.h"
+#include "platform_drivers.h"
 
 /*Arduino imlementation*/
 int32_t spi_init(spi_desc** spi_desc, spi_init_param* spi_init)
