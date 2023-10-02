@@ -2,8 +2,13 @@
   "name": "AD717x-AD411x-Arduino",
   "version": "1.0.0",
   "license" : "",
-  "keywords": "",
-  "description": "",
+  "keywords": "AD717x, AD411x, AD4111, AD4112, AD4114, AD4115, AD4116, AD7175, AD7176, AD7177, AD7172, AD7173",
+  "description": "Interface library for handling AD717x/AD411x AD converter modules by Analog Devices.",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/sgrsn/AD717x-AD411x-Arduino.git"
+  },
   "authors":
   [
     {
