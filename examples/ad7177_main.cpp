@@ -54,7 +54,7 @@ void setup() {
 
   ad717x_dev device;
   device.regs = reg;
-  device.num_regs = 30;
+  device.num_regs = 10;
   device.useCRC = AD717X_DISABLE;
 
   ad717x_dev *pdevice = &device;
@@ -64,7 +64,7 @@ void setup() {
   init_param.spi_init.cs_pin = SS;
   init_param.spi_init.spi_mode = SPI_MODE3;
   init_param.regs = reg;
-  init_param.num_regs = 30;
+  init_param.num_regs = 10;
 
   AD717X_Init(&pdevice, init_param);
 
