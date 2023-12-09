@@ -381,7 +381,7 @@ uint8_t AD717X_ComputeXOR8(uint8_t * pBuf,
 		pBuf++;
 		bufSize--;
 	}
-	return AD717X_COMM_REG_WEN;
+	return xor_;
 }
 
 /***************************************************************************//**
