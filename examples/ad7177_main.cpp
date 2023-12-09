@@ -20,34 +20,42 @@ void setup() {
   reg[0].value = AD717X_ADCMODE_REG_REF_EN | AD717X_ADCMODE_REG_MODE(0) | AD717X_ADCMODE_REG_CLKSEL(0);
   reg[0].size = 2;
 
+  /*Interface mode register*/
   reg[1].addr = AD717X_IFMODE_REG;
   reg[1].value = AD717X_IFMODE_REG_DATA_WL16;
   reg[1].size = 2;
 
+  /*GPIO Configuration Register*/
   reg[2].addr = AD717X_GPIOCON_REG;
   reg[2].value = 0x0800;
   reg[2].size = 2;
 
+  /*Offset Register*/
   reg[3].addr = AD717X_OFFSET0_REG;
   reg[3].value = 0x800000;
   reg[3].size = 3;
 
+  /*ID register; returns 16-bit model-specific ID; unique value for AD7177-2 is 0x4FDX*/
   reg[4].addr = AD717X_ID_REG;
   reg[4].value = 0x0000;
   reg[4].size = 2;
 
+  /*Enable CH0*/
   reg[5].addr = AD717X_CHMAP0_REG;
   reg[5].value = AD717X_CHMAP_REG_CH_EN | AD717X_CHMAP_REG_SETUP_SEL(0) | AD717X_CHMAP_REG_AINPOS(0) | AD717X_CHMAP_REG_AINNEG(1);
   reg[5].size = 2;
 
+  /*Set as differential input with AIN0 positive input and AIN1 negative input*/
   reg[6].addr = AD717X_SETUPCON0_REG;
   reg[6].value = AD717X_SETUP_CONF_REG_BI_UNIPOLAR | AD717X_SETUP_CONF_REG_AINBUF_P | AD717X_SETUP_CONF_REG_AINBUF_N | AD717X_SETUP_CONF_REG_REF_SEL(0b00);
   reg[6].size = 2;
 
+  /*Digital filter settings*/
   reg[7].addr = AD717X_FILTCON0_REG;
   reg[7].value = AD717X_FILT_CONF_REG_ENHFILTEN | AD717X_FILT_CONF_REG_ENHFILT(0b010) | AD717X_FILT_CONF_REG_ORDER(0) | AD717X_FILT_CONF_REG_ODR(0b00111);
   reg[7].size = 2;
 
+  /*Data register, where ADC conversion results are stored.*/
   reg[8].addr = AD717X_DATA_REG;
   reg[8].value = 0;
   reg[8].size = 4;
@@ -106,7 +114,9 @@ void setup() {
     */
 
     double Vin = ((data/2/Gain) * 0x400000 + (offset-(double)0x800000)) / 0x800000 / 0.75 * Vref;
-    Serial.println(Vin);
+    Serial.print("Voltage (AIN0 - AIN1) : ");
+    Serial.print(Vin, 3);
+    Serial.println(" [V]");
     delay(100);
   }
 }
